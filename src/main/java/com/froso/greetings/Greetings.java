@@ -1,13 +1,10 @@
+package com.froso.greetings;
+
 import com.github.javafaker.*;
 
 import java.util.*;
 
-@FunctionalInterface
-interface StringCreator {
-    String createString();
-}
-
-public class Main {
+public class Greetings {
 
     public static void main(String args[]) {
         Random random = new Random();
@@ -35,8 +32,13 @@ public class Main {
         stringCreator.add(faker.harryPotter()::quote);
         stringCreator.add(faker.witcher()::quote);
 
-        System.out.println("Quote of the execution:");
         StringCreator item = stringCreator.get(random.nextInt(stringCreator.size()));
-        System.out.println('`' + item.createString() + '`');
+        System.out.println('"' + item.createString() + '"');
+    }
+
+    @FunctionalInterface
+    static
+    interface StringCreator {
+        String createString();
     }
 }
