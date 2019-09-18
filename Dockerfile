@@ -1,4 +1,4 @@
-FROM maven:3.6-jdk-8 AS build
+FROM maven:3.6-jdk-11 AS build
 
 COPY src /usr/src/ufp-greetings/src
 COPY pom.xml /usr/src/ufp-greetings

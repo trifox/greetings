@@ -37,7 +37,7 @@ public class Greetings {
         stringCreator.add(faker.twinPeaks()::quote);
 
         StringCreator item = stringCreator.get(random.nextInt(stringCreator.size()));
-        System.out.println('"' + item.createString() + '"');
+        System.out.println(item.createString() );
     }
 
     @FunctionalInterface
