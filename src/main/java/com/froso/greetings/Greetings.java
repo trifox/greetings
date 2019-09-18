@@ -1,7 +1,6 @@
 package com.froso.greetings;
 
 import com.github.javafaker.*;
-
 import java.util.*;
 
 public class Greetings {
@@ -10,7 +9,6 @@ public class Greetings {
         Random random = new Random();
 
         Faker faker = new Faker();
-        StringCreator x = faker.chuckNorris()::fact;
         List<StringCreator> stringCreator = new ArrayList<>();
 
         stringCreator.add(faker.chuckNorris()::fact);
@@ -25,12 +23,18 @@ public class Greetings {
         stringCreator.add(faker.rickAndMorty()::quote);
         stringCreator.add(faker.yoda()::quote);
         stringCreator.add(faker.robin()::quote);
+        stringCreator.add(faker.leagueOfLegends()::quote);
         stringCreator.add(faker.shakespeare()::asYouLikeItQuote);
         stringCreator.add(faker.shakespeare()::hamletQuote);
         stringCreator.add(faker.shakespeare()::kingRichardIIIQuote);
         stringCreator.add(faker.shakespeare()::romeoAndJulietQuote);
         stringCreator.add(faker.harryPotter()::quote);
         stringCreator.add(faker.witcher()::quote);
+        stringCreator.add(faker.hobbit()::quote);
+        stringCreator.add(faker.matz()::quote);
+        stringCreator.add(faker.overwatch()::quote);
+        stringCreator.add(faker.princessBride()::quote);
+        stringCreator.add(faker.twinPeaks()::quote);
 
         StringCreator item = stringCreator.get(random.nextInt(stringCreator.size()));
         System.out.println('"' + item.createString() + '"');
